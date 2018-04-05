@@ -23,7 +23,7 @@ namespace AulaPIS
         private void button1_Click(object sender, EventArgs e)
         {
             var result = new OpenFileDialog();
-
+            
             if (result.ShowDialog() == DialogResult.OK)
             {
                 System.IO.FileInfo file = new System.IO.FileInfo(result.FileName);
@@ -71,9 +71,10 @@ namespace AulaPIS
 
         private void exercicio3ToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            Bitmap inter;
             AForge.Imaging.Filters.RotateBilinear rotate = new AForge.Imaging.Filters.RotateBilinear(90, true);
-            //AForge.Imaging.
-            bmpConvertido = rotate.Apply(bmpOriginal);
+            inter = AForge.Imaging.Image.Convert16bppTo8bpp(bmpOriginal);
+            bmpConvertido = rotate.Apply(inter);
             pictureBox2.Image = bmpConvertido;
         }
     }
