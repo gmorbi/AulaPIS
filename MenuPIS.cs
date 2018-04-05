@@ -76,6 +76,7 @@ namespace AulaPIS
             inter = AForge.Imaging.Image.Convert16bppTo8bpp(bmpOriginal);
             bmpConvertido = rotate.Apply(inter);
             pictureBox2.Image = bmpConvertido;
+            //Conversão não está OK.
         }
     }
 }
